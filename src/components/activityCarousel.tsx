@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { responsive } from "../constants";
+import { AuthContext } from "../context/auth";
+import { AuthContextType } from "../types/auth";
 
 type ActivityCarouselProps = {
   className?: string;
@@ -26,12 +29,16 @@ const ActivityCarousel = ({
   isActivitySaved,
   handleSaveActivity,
 }: ActivityCarouselProps) => {
+  const { isLoggedIn } = useContext(AuthContext) as AuthContextType;
+
   return (
     <div className={className}>
       <div className="overflow-hidden relative max-h-full w-full mt-3">
         <button
           onClick={() => handleSaveActivity()}
-          className="absolute right-1 top-1 z-10 text-sm font-bold text-white uppercase bg-red py-1.5 px-5 rounded-2.5"
+          className={`absolute right-1 top-1 text-sm font-bold text-white uppercase bg-red py-1.5 px-5 rounded-2.5 ${
+            isLoggedIn ? "z-10" : null
+          }`}
         >
           {isActivitySaved ? "Saved" : "Save"}
         </button>

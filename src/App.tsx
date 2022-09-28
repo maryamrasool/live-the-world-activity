@@ -8,7 +8,7 @@ import NotFound from "./pages/not-found";
 
 import LoginModal from "./components/loginModal";
 
-import { AuthContext } from "./context/auth";
+import { AuthContext, AuthProvider } from "./context/auth";
 
 import { AuthContextType } from "./types/auth";
 
@@ -20,15 +20,17 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      {/* {isLoggedIn ? null : <LoginModal isLoggedIn={!isLoggedIn} />} */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/activity/:activitySlug" element={<Activity />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </div>
+    <AuthProvider>
+      <div>
+        <LoginModal />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/activity/:activitySlug" element={<Activity />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+    </AuthProvider>
   );
 };
 
