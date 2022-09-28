@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import LoadingSpin from "react-loading-spin";
 
 import Article from "../components/article";
+import ActivityMap from "../components/activityMap";
 import ActivityCarousel from "../components/activityCarousel";
 import NearbyActivityCarousel from "../components/nearbyActivityCarousel";
 
@@ -120,6 +121,12 @@ const Activity = () => {
           descriptionLong={activity?.description_long}
           updatedAt={activity?.updated_at}
         />
+        <div className="mt-6">
+          <ActivityMap
+            latitude={activity?.latitude}
+            longitude={activity?.longitude}
+          />
+        </div>
         <NearbyActivityCarousel
           className="mt-6"
           heading="Recommended Activities Nearby"

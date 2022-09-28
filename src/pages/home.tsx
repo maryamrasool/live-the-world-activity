@@ -22,7 +22,14 @@ const Home = () => {
       </h1>
       <p>Here are some activities that you could check out:</p>
       {activities.map(({ id, label }) => {
-        return <button onClick={() => handleOpenActivity(id)}>{label}</button>;
+        return (
+          <button
+            onClick={() => handleOpenActivity(id)}
+            className="text-sm font-bold text-white uppercase bg-red py-1.5 px-5 rounded-2.5"
+          >
+            {label}
+          </button>
+        );
       })}
     </div>
   );
