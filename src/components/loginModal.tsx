@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import Modal from "react-modal";
 import LoadingSpin from "react-loading-spin";
-import { login } from "../../api/auth";
-import { AuthContext } from "../../context/auth";
-import { AuthContextType } from "../../types/auth";
+import { login } from "../api/auth";
+import { AuthContext } from "../context/auth";
+import { AuthContextType } from "../types/auth";
 
 type LoginModalProps = {
   isLoggedIn: boolean;

@@ -6,7 +6,7 @@ import Activity from "./pages/activity";
 import Home from "./pages/home";
 import NotFound from "./pages/not-found";
 
-import LoginModal from "./components/LoginModal";
+import LoginModal from "./components/loginModal";
 
 import { AuthContext } from "./context/auth";
 
@@ -21,11 +21,11 @@ const App = () => {
 
   return (
     <div>
-      {isLoggedIn ? null : <LoginModal isLoggedIn={!isLoggedIn} />}
+      {/* {isLoggedIn ? null : <LoginModal isLoggedIn={!isLoggedIn} />} */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/activity" element={<Activity />} />
+        <Route path="/activity/:activitySlug" element={<Activity />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
