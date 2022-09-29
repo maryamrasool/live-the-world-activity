@@ -16,7 +16,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="p-2">
       <h1 className="text-3xl font-bold underline">
         Hello this is a sample page
       </h1>

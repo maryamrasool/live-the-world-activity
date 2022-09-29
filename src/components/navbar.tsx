@@ -3,7 +3,7 @@ import React from "react";
 const NavLinks = ["Destinations", "Interests", "My Trips", "Map"];
 const Navbar = () => {
   return (
-    <div className="flex px-4 py-1 justify-between items-center shadow-md">
+    <div className="flex px-4 py-1 justify-between items-center shadow-md sticky top-0 w-full z-20 bg-white">
       <div
         className="w-28 md:w-20 h-8 md:h-12"
         style={{
