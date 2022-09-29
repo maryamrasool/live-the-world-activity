@@ -12,10 +12,16 @@ export const AuthProvider = ({ children }: any) => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [token, setToken] = useState<string | null>(null);
 
+  const body = document.querySelector("body");
+
   useEffect(() => {
     const localStorageToken = localStorage.getItem("token");
+
     if (localStorageToken) {
       setIsLoggedIn(true);
+      if (body) {
+        body.style.overflow = "auto";
+      }
       setToken(localStorageToken);
     }
   }, []);

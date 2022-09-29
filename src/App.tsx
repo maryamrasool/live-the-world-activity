@@ -9,6 +9,7 @@ import NotFound from "./pages/not-found";
 import LoginModal from "./components/loginModal";
 
 import { AuthProvider } from "./context/auth";
+import Navbar from "./components/navbar";
 
 const App = () => {
   useEffect(() => {
@@ -18,6 +19,7 @@ const App = () => {
   return (
     <AuthProvider>
       <div>
+        <Navbar />
         <LoginModal />
         <Routes>
           <Route path="/" element={<Home />} />

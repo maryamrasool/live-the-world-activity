@@ -113,7 +113,7 @@ const Activity = () => {
           handleSaveActivity={handleSaveActivity}
         />
       )}
-      <div className="px-25">
+      <div className="px-9 md:px-25">
         <Article
           name={activity?.name}
           labels={activity?.labels}
