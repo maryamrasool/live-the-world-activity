@@ -8,13 +8,9 @@ import NotFound from "./pages/not-found";
 
 import LoginModal from "./components/loginModal";
 
-import { AuthContext, AuthProvider } from "./context/auth";
-
-import { AuthContextType } from "./types/auth";
+import { AuthProvider } from "./context/auth";
 
 const App = () => {
-  const { isLoggedIn } = useContext(AuthContext) as AuthContextType;
-
   useEffect(() => {
     Modal.setAppElement(`#root`);
   }, []);

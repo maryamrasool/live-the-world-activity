@@ -74,12 +74,9 @@ const NearbyActivityCarousel = ({
                     <span className="font-normal text-gray line-clamp-5">
                       {description_short}
                     </span>
-                    <a
-                      href="#"
-                      className="font-bold text-red hover:text-blue leading-6"
-                    >
+                    <button className="font-bold text-red hover:text-blue leading-6">
                       READ MORE
-                    </a>
+                    </button>
                   </p>
                 </div>
               );
